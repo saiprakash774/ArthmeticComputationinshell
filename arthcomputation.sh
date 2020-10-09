@@ -18,5 +18,9 @@ result[$((counter++))]="$uc2"
 result[$((counter++))]="$uc3"
 result[$((counter++))]="$uc4"
 result[$((counter++))]="$uc5"
-
 echo ${result[@]}
+for (( i=0; i<5; i++ ))
+do
+	arr[i]=${result[$(($i-1))]}
+done
+echo ${arr[@]}

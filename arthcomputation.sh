@@ -21,6 +21,21 @@ result[$((counter++))]="$uc5"
 echo ${result[@]}
 for (( i=0; i<5; i++ ))
 do
-	arr[i]=${result[$(($i-1))]}
+        arr[i]=${result[$(($i-1))]}
 done
 echo ${arr[@]}
+
+for (( k=0; k<3; k++ ))
+do
+	for (( j=k+1; j<3; j++ ))
+	do
+		if [[ ${arr[$k]} -gt ${arr[$j]} ]]
+		then
+			temp=${arr[$k]}
+			arr[$k]=${arr[$j]}
+			arr[$j]=$temp
+		fi
+	done
+done
+
+echo "${arr[@]}"

@@ -6,5 +6,6 @@ uc2=$(($a+$b*$c));
 echo "a+b*c is " $uc2;
 uc3=$(($a*$b+$c))
 echo "a*b+c is " $uc3
-
+uc4=$(($c+$a/$b))
+echo "c+a/b is " $uc4
 
